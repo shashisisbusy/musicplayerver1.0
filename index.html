@@ -2,52 +2,63 @@
     <head>
         <title>MyApp</title>
     </head>
-    <body bgcolor="gray">
-    				<div class="tabla">
-    								<p align="center"><img src="music.gif" width="90%"></p>
-    				</div>
-        <div id="playbutton">
-            <h2 id="playtext">Play</h2>
+<body bgcolor="gray">
+  <center>
+    <div class="tabla">
+      <p align="center"><img src="music.gif"></p>
+    </div>
+  </center>
+  <center>
+    <div class="container">
+      <div id="app">
+        <div class="pause">
+          <div class="line line_1"></div>
+          <div class="line line_2"></div>
         </div>
-        <div id="resetbutton">
-            <h3 id="resettext">Reset</h3>
+        <div class="play active">
+          <div class="line line_1"></div>
+          <div class="line line_2"></div>
+          <div class="line line_3"></div>
         </div>
-    </body>
-    <style>
-    				.tabla{
-    								border: solid;
-    								border-color: #ee6aff;
-    								border-radius: 10%;
-    				}
-        #playbutton{
-            background-color: lightblue;
-            height: 180px;
-            width: 180px;
-            border-radius: 50%;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 5%;
-        }
-        #playtext{
-            line-height: 180px;
-            font-size: 40px;
-        }
-        #resetbutton{
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #ff6a6a;
-            width: 100px;
-            height: 80px;
-            color: white;
-            border-radius: 20%;
-        }
-        #resettext{
-            line-height: 80px;
-            font-size: 30px;
-        }
-    </style>
+      </div>
+    </div>
+
+  </center>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/segment-js/1.0.3/segment.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/d3-ease.v0.6.min.js"></script>
+
+  <button class="refresh-icon">
+    <svg viewBox="0 0 90 90">
+      <path class="circle-path" d="M 45 45 m 0 -30 a 30 30 0 1 1 0 60 a 30 30 0 1 1 0 -60"></path>
+    </svg>
+    <svg class="arrow-svg" viewBox="0 0 90 90">
+      <path class="arrow-path" d="M 50 15 m -18 -18 l 18 18 l -18 18"></path>
+    </svg>
+  </button>
+  <div class="music one">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="music two">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="music three">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</body>
     <script>
         var playbutton = document.getElementById('playbutton');
         var resetbutton = document.getElementById('resetbutton');
@@ -60,15 +71,13 @@
         function playpause() {
             if (Flag === 0) {
                 audio.play();
-                playbutton.style.backgroundColor = '#d93fff';
-                playtext.textContent = 'Pause';
+                
                 Flag = 1;
             }
             else {
                 Flag = 0;
                 audio.pause();
-                playbutton.style.backgroundColor = '#95ffe1';
-                playtext.textContent = 'Play';
+                
             }
         }
 
@@ -76,8 +85,6 @@
             audio.pause()
             audio.currentTime = 0;
             Flag = 0;
-            playbutton.style.backgroundColor = '#95ffe1';
-            playtext.textContent = 'Play';
         }
     </script>
 </html>
