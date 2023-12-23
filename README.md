@@ -1,5 +1,5 @@
 # Music Player Version-2.0
-This is a simple music player built to learn about html, css and js cordinating together and working.
+This is a simple music player🎶 🎶 built to learn about html, css and js interacting with each other and working.
 
 
 ## Music Player
